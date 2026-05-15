@@ -1,10 +1,14 @@
 import os
 
 from app import create_app
+from app.extensions.extensions import db
+from app.models.user import User
 
+app = create_app()
 
-app = create_app() # Instancia
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 17001))
-    app.run(debug=True, port=port)
+    app.run(host="0.0.0.0", debug=True, port=port)

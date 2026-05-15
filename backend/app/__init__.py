@@ -4,8 +4,7 @@ from app.extensions.extensions import db
 from app.routes.main_routes import main_bp
 from app.config.config import Config
 
-
-
+from app.models.user import User
 
 def create_app():
     app = Flask(__name__)
