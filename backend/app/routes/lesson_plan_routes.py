@@ -3,7 +3,11 @@ from flask import Blueprint, request, jsonify
 
 from app.services.lesson_plan_service import (
     create_lesson_plan,
-    get_all_lesson_plans
+    get_all_lesson_plans,
+    get_lesson_plan_by_id,
+    update_lesson_plan,
+    delete_lesson_plan
+    
 )
 
 
@@ -42,3 +46,54 @@ def get_lesson_plans():
         })
 
     return jsonify(results), 200
+
+@lesson_plan_bp.route("/lesson-plans/<int:lesson_plan_id>", methods=["GET"])
+def get_lesson_plan(lesson_plan_id):
+
+    lesson_plan = get_lesson_plan_by_id(lesson_plan_id)
+
+    if not lesson_plan:
+        return jsonify({
+            "message": "Lesson plan not found"
+        }), 404
+
+    return jsonify({
+        "id": lesson_plan.id,
+        "title": lesson_plan.title,
+        "objective": lesson_plan.objective,
+        "summary": lesson_plan.summary,
+        "subject": lesson_plan.subject
+    }), 200
+
+@lesson_plan_bp.route("/lesson-plans/<int:lesson_plan_id>", methods=["PUT"])
+def update_lesson_plan_route(lesson_plan_id):
+
+    data = request.get_json()
+
+    lesson_plan = update_lesson_plan(
+        lesson_plan_id,
+        data
+    )
+
+    if lesson_plan is None:
+        return jsonify({
+            "message": "Lesson plan not found"
+        }), 404
+
+    return jsonify({
+        "message": "Lesson plan updated successfully"
+    }), 200
+
+@lesson_plan_bp.route("/lesson-plans/<int:lesson_plan_id>", methods=["DELETE"])
+def delete_lesson_plan_route(lesson_plan_id):
+
+    lesson_plan = delete_lesson_plan(lesson_plan_id)
+
+    if lesson_plan is None:
+        return jsonify({
+            "message": "Lesson plan not found"
+        }), 404
+
+    return jsonify({
+        "message": "Lesson plan deleted successfully"
+    }), 200
