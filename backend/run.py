@@ -1,8 +1,9 @@
 import os
 
 from app import create_app
-from app.extensions import db
-from app.models.user import User, LessonPlan
+from app.extensions.extensions import db
+from app.models.user import User
+from app.models.lesson_plan import LessonPlan
 
 app = create_app()
 

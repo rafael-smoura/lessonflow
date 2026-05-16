@@ -1,4 +1,4 @@
-from app.extensions import db
+from app.extensions.extensions import db
 
 
 class LessonPlan(db.Model):
@@ -22,5 +22,5 @@ class LessonPlan(db.Model):
 
     created_at = db.Column(
         db.DateTime,
-        server_default=db.func.now()
+        server_default=db.func.now() # recebe dadta automatica de criacao
     )
