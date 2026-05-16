@@ -4,6 +4,7 @@ from app.extensions.extensions import db
 from app.routes.main_routes import main_bp
 from app.routes.auth_routes import auth_bp
 from app.models.lesson_plan import LessonPlan
+from app.routes.lesson_plan_routes import lesson_plan_bp
 
 from app.config.config import Config
 
@@ -18,6 +19,7 @@ def create_app():
 
     app.register_blueprint(main_bp)
     app.register_blueprint(auth_bp)
+    app.register_blueprint(lesson_plan_bp)
     
     
     return app
