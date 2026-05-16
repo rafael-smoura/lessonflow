@@ -3,6 +3,8 @@ from flask import Flask
 from app.extensions.extensions import db
 from app.routes.main_routes import main_bp
 from app.routes.auth_routes import auth_bp
+from app.models.lesson_plan import LessonPlan
+
 from app.config.config import Config
 
 from app.models.user import User
