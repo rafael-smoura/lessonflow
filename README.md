@@ -1,4 +1,6 @@
-# LessonFlow
+
+# 📚LessonFlow
+
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Flask](https://img.shields.io/badge/Flask-Backend-black)
@@ -7,8 +9,7 @@
 ![Status](https://img.shields.io/badge/Status-In%20Development-orange)
 
 AI-powered lesson plan management platform built with Flask, Bootstrap and PostgreSQL.
-
----
+<img width="2172" height="724" alt="banner_oficial" src="https://github.com/user-attachments/assets/2318dd9d-f2f9-47c5-8dfb-ba14017b3195" />
 
 ## Overview
 
