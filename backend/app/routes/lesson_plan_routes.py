@@ -1,4 +1,7 @@
 from flask import Blueprint, request, jsonify
+from marshmallow import ValidationError
+
+from app.schemas.lesson_plan_schema import LessonPlanSchema
 
 
 from app.services.lesson_plan_service import (
@@ -15,13 +18,24 @@ lesson_plan_bp = Blueprint(
     __name__
 )
 
+lesson_plan_schema = LessonPlanSchema()
 
 @lesson_plan_bp.route("/lesson-plans", methods=["POST"])
 def create_plan():
 
     data = request.get_json()
 
-    lesson_plan = create_lesson_plan(data)
+    try:
+
+        validated_data = lesson_plan_schema.load(data)
+
+    except ValidationError as error:
+
+        return jsonify({
+            "errors": error.messages
+        }), 400
+
+    lesson_plan = create_lesson_plan(validated_data)
 
     return jsonify({
         "message": "Lesson plan created successfully",
