@@ -1,5 +1,6 @@
 from flask import Flask
 
+from flask_cors import CORS
 from app.extensions.extensions import db
 from app.routes.main_routes import main_bp
 from app.routes.auth_routes import auth_bp
@@ -12,6 +13,9 @@ from app.models.user import User
 
 def create_app():
     app = Flask(__name__)
+
+    # 2. Habilita o CORS para permitir acessos vindos do frontend
+    CORS(app)
 
     app.config.from_object(Config)
 
