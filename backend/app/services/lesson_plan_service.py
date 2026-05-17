@@ -27,8 +27,34 @@ def create_lesson_plan(data):
     return lesson_plan
 
 
-def get_all_lesson_plans():
-    return LessonPlan.query.all()
+def get_all_lesson_plans(
+    discipline=None,
+    search=None,
+    page=1,
+    per_page=5
+):
+
+    query = LessonPlan.query
+
+    if discipline:
+
+        query = query.filter_by(
+            discipline=discipline
+        )
+
+    if search:
+
+        query = query.filter(
+            LessonPlan.title.ilike(f"%{search}%")
+        )
+
+    paginated_lesson_plans = query.paginate(
+        page=page,
+        per_page=per_page,
+        error_out=False
+    )
+
+    return paginated_lesson_plans
 
 
 def get_lesson_plan_by_id(lesson_plan_id):

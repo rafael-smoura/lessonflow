@@ -3,7 +3,6 @@ from marshmallow import ValidationError
 
 from app.schemas.lesson_plan_schema import LessonPlanSchema
 
-
 from app.services.lesson_plan_service import (
     create_lesson_plan,
     get_all_lesson_plans,
@@ -12,13 +11,19 @@ from app.services.lesson_plan_service import (
     delete_lesson_plan
 )
 
-
+# TODO
+"""
+from app.ai.lesson_plan_ai import (
+    generate_lesson_plan_recommendations
+)
+"""
 lesson_plan_bp = Blueprint(
     "lesson_plan",
     __name__
 )
 
 lesson_plan_schema = LessonPlanSchema()
+
 
 @lesson_plan_bp.route("/lesson-plans", methods=["POST"])
 def create_plan():
@@ -46,11 +51,32 @@ def create_plan():
 @lesson_plan_bp.route("/lesson-plans", methods=["GET"])
 def get_lesson_plans():
 
-    lesson_plans = get_all_lesson_plans()
+    discipline = request.args.get("discipline")
+
+    search = request.args.get("search")
+
+    page = request.args.get(
+        "page",
+        1,
+        type=int
+    )
+
+    per_page = request.args.get(
+        "per_page",
+        5,
+        type=int
+    )
+
+    lesson_plans = get_all_lesson_plans(
+        discipline,
+        search,
+        page,
+        per_page
+    )
 
     results = []
 
-    for lesson_plan in lesson_plans:
+    for lesson_plan in lesson_plans.items:
 
         results.append({
             "id": lesson_plan.id,
@@ -67,7 +93,13 @@ def get_lesson_plans():
             )
         })
 
-    return jsonify(results), 200
+    return jsonify({
+    "page": lesson_plans.page,
+    "per_page": lesson_plans.per_page,
+    "total": lesson_plans.total,
+    "pages": lesson_plans.pages,
+    "data": results
+}), 200
 
 
 @lesson_plan_bp.route("/lesson-plans/<int:lesson_plan_id>", methods=["GET"])
@@ -132,3 +164,6 @@ def delete_lesson_plan_route(lesson_plan_id):
     return jsonify({
         "message": "Lesson plan deleted successfully"
     }), 200
+
+
+
