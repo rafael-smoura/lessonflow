@@ -3,18 +3,22 @@ from marshmallow import Schema, fields
 
 class LessonPlanSchema(Schema):
 
-    title = fields.String(required=True)
+    id = fields.Int(dump_only=True)
 
-    objective = fields.String(required=True)
+    title = fields.Str(required=True)
 
-    summary = fields.String(required=True)
+    objective = fields.Str(required=True)
+
+    summary = fields.Str(required=True)
 
     planned_date = fields.Date(required=True)
 
-    discipline = fields.String(required=True)
+    discipline = fields.Str(required=True)
 
-    contents = fields.String(required=True)
+    contents = fields.Str(required=False)
 
-    support_resources = fields.String(required=False)
+    support_resources = fields.Str(required=False)
 
-    tags = fields.String(required=False)
+    tags = fields.Str(required=False)
+
+    created_at = fields.DateTime(dump_only=True)
