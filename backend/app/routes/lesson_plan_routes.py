@@ -38,6 +38,28 @@ def create_plan():
         return jsonify({
             "errors": error.messages
         }), 400
+    
+
+    ai_data = generate_lesson_plan_recommendations(
+    validated_data["title"],
+    validated_data["discipline"],
+    validated_data["summary"]
+)
+
+    validated_data["contents"] = ai_data.get(
+        "contents",
+        ""
+    )
+
+    validated_data["support_resources"] = ai_data.get(
+        "support_resources",
+        ""
+    )
+
+    validated_data["tags"] = ai_data.get(
+        "tags",
+        ""
+    )
 
     lesson_plan = create_lesson_plan(validated_data)
 

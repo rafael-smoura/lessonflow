@@ -10,10 +10,7 @@ def create_lesson_plan(data):
         title=data["title"],
         objective=data["objective"],
         summary=data["summary"],
-        planned_date=datetime.strptime(
-            data["planned_date"],
-            "%Y-%m-%d"
-        ).date(),
+        planned_date=data["planned_date"],
         discipline=data["discipline"],
         contents=data["contents"],
         support_resources=data["support_resources"],
