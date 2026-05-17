@@ -4,7 +4,6 @@ import json
 from openai import OpenAI
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 client = OpenAI(
@@ -44,7 +43,7 @@ def generate_lesson_plan_recommendations(
     """
 
     response = client.chat.completions.create(
-        model="openrouter/free",
+        model="google/gemma-3-27b-it:free",
         messages=[
             {
                 "role": "user",
@@ -63,4 +62,14 @@ def generate_lesson_plan_recommendations(
         ""
     ).strip()
 
-    return json.loads(cleaned_text)
+    try:
+
+        return json.loads(cleaned_text)
+
+    except json.JSONDecodeError:
+
+        return {
+            "contents": "",
+            "support_resources": "",
+            "tags": ""
+        }
