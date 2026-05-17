@@ -44,6 +44,7 @@ def generate_lesson_plan_recommendations(
 
     response = client.chat.completions.create(
         model="llama-3.1-8b-instant",
+        response_format={"type": "json_object"},
         messages=[
             {
                 "role": "user",
