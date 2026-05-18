@@ -53,6 +53,7 @@ def create_plan():
     }), 201
 
 
+
 @lesson_plan_bp.route("/lesson-plans", methods=["GET"])
 def get_lesson_plans():
     # Parâmetros dinâmicos de filtragem e busca [cite: 19, 20]
@@ -133,6 +134,12 @@ def update_lesson_plan_route(lesson_plan_id):
         "data": lesson_plan_schema.dump(lesson_plan)
     }), 200
 
+@lesson_plan_bp.route("/health", methods=["GET"])
+def health():
+
+    return jsonify({
+        "status": "ok"
+    }), 200
 
 @lesson_plan_bp.route("/lesson-plans/<int:lesson_plan_id>", methods=["DELETE"])
 def delete_lesson_plan_route(lesson_plan_id):
