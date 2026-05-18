@@ -33,7 +33,7 @@ def get_all_lesson_plans(
     query = LessonPlan.query
 
     if discipline:
-        query = query.filter_by(discipline=discipline)
+        query = query.filter(LessonPlan.discipline.ilike(f"%{discipline}%"))
 
     if tag:
         query = query.filter(LessonPlan.tags.ilike(f"%{tag}%"))
