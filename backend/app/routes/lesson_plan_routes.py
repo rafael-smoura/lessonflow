@@ -178,3 +178,4 @@ def generate_ai_recommendations():
             "message": "AI generation failed",
             "error": str(error)
         }), 500
+
