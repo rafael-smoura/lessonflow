@@ -1,6 +1,4 @@
-
-# 📚LessonFlow
-
+# 📚 LessonFlow
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Flask](https://img.shields.io/badge/Flask-Backend-black)
@@ -9,138 +7,187 @@
 ![Status](https://img.shields.io/badge/Status-In%20Development-orange)
 
 AI-powered lesson plan management platform built with Flask, Bootstrap and PostgreSQL.
+
 <img width="2172" height="724" alt="banner_oficial" src="https://github.com/user-attachments/assets/2318dd9d-f2f9-47c5-8dfb-ba14017b3195" />
-
-## Overview
-
-LessonFlow is an educational platform focused on lesson planning and pedagogical content organization.
-
-The system allows teachers to manage lesson plans efficiently while using AI-powered recommendations to generate complementary teaching content, related topics and suggested tags.
-
-This project was developed as a technical challenge with focus on:
-
-- REST API development
-- Full-stack integration
-- AI-assisted educational tools
-- Modular backend architecture
-- Dockerized environment
-- Logging and observability
-- Professional development workflow
 
 ---
 
-## Features
+# 🚀 Overview
 
-### Lesson Plan Management
+LessonFlow is a full-stack educational platform focused on lesson planning, pedagogical organization and AI-assisted teaching workflows.
+
+The platform allows teachers to:
+
+- create and manage lesson plans
+- organize educational content
+- search and filter lessons
+- receive AI-generated recommendations
+- improve teaching productivity
+
+This project was developed as a technical challenge with focus on professional backend architecture, REST APIs and AI integration.
+
+---
+
+# ✨ Features
+
+## 📖 Lesson Plan Management
+
 - Create lesson plans
 - Edit lesson plans
 - Delete lesson plans
 - Paginated lesson listing
 - Search by lesson title
-- Filter by subject, tags and planned date
-- Sorting by title or creation date
-
-### AI Smart Assist
-- AI-generated teaching recommendations
-- Suggested complementary topics
-- Automatic tag generation
-- Structured JSON responses from LLM integration
-
-### Technical Features
-- RESTful API
-- Form validation
-- Structured logging
-- Environment variable management
-- Docker support
-- Health check endpoint
-- Responsive interface
+- Filter by discipline
+- Tag-based filtering
+- Planned date management
 
 ---
 
-## Tech Stack
+## 🤖 AI Smart Assist
 
-### Backend
+- AI-generated teaching recommendations
+- Suggested complementary content
+- Automatic educational tags
+- Suggested support resources
+- Structured JSON AI responses
+
+---
+
+## 🌎 Frontend Features
+
+- Responsive interface
+- Dark / Light mode
+- English / Portuguese support
+- Real-time filtering
+- Dynamic suggestions
+- SPA-like navigation experience
+
+---
+
+# 🛠️ Tech Stack
+
+## Backend
+
 - Python
 - Flask
 - SQLAlchemy
+- Marshmallow
 - PostgreSQL / SQLite
-
-### Frontend
-- HTML5
-- CSS3
-- Bootstrap
-- JavaScript
-
-### DevOps
-- Docker
-- Docker Compose
-- GitHub Actions
+- OpenAI-compatible API integration
 
 ---
 
-## Project Structure
+## Frontend
+
+- HTML5
+- CSS3
+- Bootstrap 5
+- Vanilla JavaScript
+
+---
+
+## DevOps
+
+- Docker
+- Git
+- GitHub
+
+---
+
+# 🧠 Software Architecture
+
+The backend follows a modular and scalable architecture pattern:
+
+```bash
+app/
+├── ai/
+├── models/
+├── routes/
+├── schemas/
+├── services/
+└── extensions/
+
+```
+
+## Architecture Highlights
+
+- Application Factory Pattern
+- Blueprints
+- Service Layer
+- Schema Validation
+- Environment Variables
+- Separation of Concerns
+- RESTful conventions
+
+---
+
+# 📂 Project Structure
 
 ```bash
 lessonflow/
 │
 ├── backend/
 │   ├── app/
-│   │   ├── routes/
+│   │   ├── ai/
 │   │   ├── models/
-│   │   ├── services/
+│   │   ├── routes/
 │   │   ├── schemas/
-│   │   ├── utils/
-│   │   └── config/
+│   │   ├── services/
+│   │   └── extensions/
+│   │   
 │   │
-│   ├── tests/
 │   ├── requirements.txt
 │   ├── Dockerfile
 │   └── run.py
 │
 ├── frontend/
 │
-├── docker-compose.yml
 ├── .env.example
 ├── README.md
-└── .github/
+└── .gitignore
 ```
 
 ---
 
-## Installation
+# ⚙️ Installation
 
-### Clone the repository
+## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/lessonflow.git
+git clone https://github.com/rafael-smoura/lessonflow.git
+
 cd lessonflow
 ```
 
 ---
 
-## Backend Setup
+# 🔧 Backend Setup
 
-### Create virtual environment
+## Create Virtual Environment
 
 ```bash
-python -m venv venv
-```
-
-### Activate virtual environment
-
-#### Windows
-```bash
-venv\Scripts\activate
-```
-
-#### Linux / Mac
-```bash
-source venv/bin/activate
+python -m venv .venv
 ```
 
 ---
 
-### Install dependencies
+## Activate Virtual Environment
+
+### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### Linux / Mac
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -148,94 +195,128 @@ pip install -r requirements.txt
 
 ---
 
-## Environment Variables
+# 🔐 Environment Variables
 
-Create a `.env` file inside the backend folder:
+Create a `.env` file inside `/backend`.
+
+Example:
 
 ```env
-FLASK_APP=run.py
-FLASK_ENV=development
-
-SECRET_KEY=your_secret_key
-
-DATABASE_URL=postgresql://user:password@localhost:5432/lessonflow
-
-OPENAI_API_KEY=your_api_key
+GROQ_API_KEY=your_key_api
 ```
 
 ---
 
-## Running the Application
+# ▶️ Running The Application
+
+## Local Development
 
 ```bash
-flask run
+python run.py
 ```
 
----
-
-## Docker Setup
+Application will run at:
 
 ```bash
-docker compose up --build
+http://127.0.0.1:17001
 ```
 
 ---
 
-## API Endpoints
+# 🐳 Docker
+
+## Build Container
+
+```bash
+cd backend
+docker build -t lessonflow-api .
+```
+
+## Run Container
+
+```bash
+docker run -p 17001:17001 --env-file .env lessonflow-api<img width="666" height="677" alt="Screenshot 2026-05-18 154216" src="https://github.com/user-attachments/assets/713d8a2b-595b-448f-a7d8-8e208e93d5d0" />
+
+```
+
+---
+
+# 📡 API Endpoints
 
 | Method | Endpoint | Description |
 |---|---|---|
-| GET | /lesson-plans | List lesson plans |
-| GET | /lesson-plans/<id> | Get lesson plan |
-| POST | /lesson-plans | Create lesson plan |
-| PUT | /lesson-plans/<id> | Update lesson plan |
-| DELETE | /lesson-plans/<id> | Delete lesson plan |
-| POST | /ai/recommendations | Generate AI suggestions |
-| GET | /health | Health check |
+| GET | `/lesson-plans` | List lesson plans |
+| GET | `/lesson-plans/<id>` | Get lesson plan |
+| POST | `/lesson-plans` | Create lesson plan |
+| PUT | `/lesson-plans/<id>` | Update lesson plan |
+| DELETE | `/lesson-plans/<id>` | Delete lesson plan |
+| POST | `/lesson-plans/ai-recommendations` | Generate AI suggestions |
 
 ---
 
-## Example AI Request
+# 🧪 Example Request
+
+## POST `/lesson-plans`
 
 ```json
 {
-  "title": "Introduction to Computer Networks",
-  "subject": "Networking",
-  "summary": "Basic concepts of IP addressing and routing."
+  "title": "Introduction to Algebra",
+  "objective": "Teach algebra basics",
+  "summary": "First contact with algebra",
+  "planned_date": "2026-05-20",
+  "discipline": "Mathematics",
+  "contents": "Variables and equations",
+  "support_resources": "Slides and exercises",
+  "tags": "math,algebra"
 }
 ```
 
 ---
 
-## Screenshots
+# 📸 Screenshots
 
-> Screenshots will be added during development.
+## Dashboard
+
+<img width="1916" height="445" alt="ezgif com-animated-gif-maker" src="https://github.com/user-attachments/assets/25fae0ad-86b8-45af-b50e-8c50cfcc23c7" />
 
 ---
 
-## Future Improvements
+## AI Recommendation System
 
-- Authentication and authorization
-- User roles
-- Unit and integration tests
-- CI/CD pipeline improvements
+> Add AI assistant screenshot here
+<img width="1906" height="910" alt="image" src="https://github.com/user-attachments/assets/06e9d2cf-6892-440c-87dd-c190035c9044" />
+
+---
+
+
+# 🚀 Future Improvements
+
+- JWT authentication
+- User accounts
+- Role-based access
+- Automated tests
+- CI/CD pipelines
 - AI prompt optimization
-- Dashboard analytics
+- Analytics dashboard
 - Cloud deployment
 
 ---
 
-## Development Practices
+# 📚 Development Practices
 
-- Clean code principles
-- Conventional commits
-- Environment variable protection
-- Modular architecture
-- Error handling
-- RESTful conventions
+- Clean Code
+- RESTful API Design
+- Conventional Commits
+- Modular Architecture
+- Separation of Concerns
+- Environment Variable Protection
 
 ---
 
-## Author
+# 👨‍💻 Author
 
-Developed by Rafael.
+Developed by Rafael Moura.
+
+GitHub:
+https://github.com/rafael-smoura
+
