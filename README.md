@@ -223,19 +223,17 @@ http://127.0.0.1:17001
 
 ---
 
-# 🐳 Docker
+# 🐳 Docker & Containerization
 
-## Build Container
+A aplicação possui suporte a containerização completa utilizando Docker Compose, permitindo subir o ecossistema (Backend + Frontend) com um único comando.
 
-```bash
-cd backend
-docker build -t lessonflow-api .
-```
+## Como Rodar com Docker Compose (Recomendado)
 
-## Run Container
+1. Certifique-se de que possui um arquivo `.env` configurado na raiz do projeto contendo sua `GROQ_API_KEY`.
+2. Na raiz do projeto, execute o comando:
 
 ```bash
-docker run -p 17001:17001 --env-file .env lessonflow-api<img width="666" height="677" alt="Screenshot 2026-05-18 154216" src="https://github.com/user-attachments/assets/713d8a2b-595b-448f-a7d8-8e208e93d5d0" />
+docker-compose up --build
 
 ```
 
