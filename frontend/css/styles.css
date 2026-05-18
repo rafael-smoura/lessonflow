@@ -1,0 +1,200 @@
+/* =========================
+   GLOBAL SETTINGS
+========================= */
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #111827, #1f2937);
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth animations */
+* {
+    scroll-behavior: smooth;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    backdrop-filter: blur(12px);
+    background: rgba(17, 24, 39, 0.85) !important;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   FORM ELEMENTS
+========================= */
+
+.form-control,
+.form-select {
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.8rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+/* =========================
+   LABELS
+========================= */
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 0.5rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+/* AI BUTTON */
+
+.btn-ai {
+    background: linear-gradient(135deg, #4b0082, #6a0dad);
+    color: white !important;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 3px 6px rgba(106, 13, 173, 0.2);
+}
+
+.btn-ai:hover {
+    background: linear-gradient(135deg, #3d0066, #550a8a);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(106, 13, 173, 0.3);
+}
+
+/* =========================
+   TABLES
+========================= */
+
+.table {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.table th {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(255,255,255,0.03);
+}
+
+/* =========================
+   AI PANEL
+========================= */
+
+.ai-panel {
+    background-color: #261635 !important;
+    border: 1px solid #4b286d !important;
+    transition: all 0.3s ease;
+}
+
+.ai-panel:hover {
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.15);
+}
+
+/* Light Theme */
+
+[data-bs-theme="light"] body {
+    background: #f3f4f6;
+}
+
+[data-bs-theme="light"] .ai-panel {
+    background-color: #f8f0ff !important;
+    border: 1px solid #dcd0ff !important;
+}
+
+[data-bs-theme="light"] .card {
+    background: white;
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.badge {
+    border-radius: 8px;
+    padding: 0.45rem 0.7rem;
+}
+
+/* =========================
+   ICONS
+========================= */
+
+.tech-icon {
+    font-size: 1.4rem;
+    vertical-align: middle;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+.max-width-card {
+    max-width: 900px;
+}
+
+.loading-spinner {
+    display: none;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+section {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
