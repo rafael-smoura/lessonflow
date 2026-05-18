@@ -16,13 +16,14 @@ AI-powered lesson plan management platform built with Flask, Bootstrap and Postg
 The project is fully online and available for testing! The application was deployed using a modern, decoupled architecture on **Render**:
 
 * **🔗 Application Link:** [https://lessonflow-fronted.onrender.com](https://lessonflow-fronted.onrender.com)
----
 
 ### 🏗️ Deployment Architecture
 * **Frontend:** Hosted as a *Static Site* for fast and optimized loading times.
 * **Backend:** Containerized with **Docker** into a *Web Service*, handling requests using Python/Flask.
 * **Database:** Isolated **PostgreSQL** instance for secure persistence of lesson plans.
 * **AI:** Real-time integration with the **Groq** API for smart content generation.
+
+---
 
 # 🚀 Overview
 
