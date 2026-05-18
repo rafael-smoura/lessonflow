@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, jsonify
 from flask_cors import CORS
 from app.extensions.extensions import db
 from app.routes.auth_routes import auth_bp
@@ -11,12 +11,7 @@ from app.models.user import User
 def create_app():
     base_dir = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
     
-    app = Flask(
-        __name__,
-        template_folder=os.path.join(base_dir, 'frontend'),
-        static_folder=os.path.join(base_dir, 'frontend'),
-        static_url_path=''
-    )
+    app = Flask(__name__)
 
     CORS(app)
     app.config.from_object(Config)
@@ -24,7 +19,10 @@ def create_app():
 
     @app.route('/')
     def serve_frontend():
-        return render_template('index.html')
+        return jsonify({
+            "status": "healthy", 
+            "message": "LessonFlow API is running successfully"
+        }), 200
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(lesson_plan_bp)
