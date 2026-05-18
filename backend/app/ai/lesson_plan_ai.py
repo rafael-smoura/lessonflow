@@ -1,5 +1,6 @@
 import os
 import json
+import time 
 
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -19,13 +20,13 @@ def generate_lesson_plan_recommendations(
 ):
 
     prompt = f"""
-    You are an educational assistant.
+    You are an educational assistant. [cite: 176]
 
-    Generate complementary lesson recommendations based on the summary provided.
+    Generate complementary lesson recommendations based on the summary provided. [cite: 115, 118]
     
     CRITICAL: The values for "contents", "support_resources", and "tags" MUST be plain text strings. Do not use nested arrays or nested objects.
 
-    Return ONLY valid JSON.
+    Return ONLY valid JSON. [cite: 145]
 
     Format:
     {{
@@ -44,6 +45,8 @@ def generate_lesson_plan_recommendations(
     {summary}
     """
 
+    start_time = time.time()
+
     response = client.chat.completions.create(
         model="llama-3.1-8b-instant",
         response_format={"type": "json_object"},
@@ -54,6 +57,12 @@ def generate_lesson_plan_recommendations(
             }
         ]
     )
+
+    latency = round(time.time() - start_time, 2)
+
+    token_usage = response.usage.total_tokens if response.usage else 0
+
+    print(f'[INFO] AI Request: Title="{title}", Discipline="{discipline}", Token Usage={token_usage}, Latency={latency}s.', flush=True)
 
     text = response.choices[0].message.content
 
