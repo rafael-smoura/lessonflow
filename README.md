@@ -11,39 +11,72 @@ AI-powered lesson plan management platform built with Flask, Bootstrap and Postg
 <img width="2172" height="724" alt="banner_oficial" src="https://github.com/user-attachments/assets/2318dd9d-f2f9-47c5-8dfb-ba14017b3195" />
 
 ---
-# 🚀 Production Demo
+
+
+</div>
+
+<details>
+<summary><b>📑 Click to expand Table of Contents</b></summary>
+
+# 📑 Table of Contents
+
+- [🚀 Live Production Demo](#-live-production-demo)
+- [🏗️ Deployment Architecture](#️-deployment-architecture)
+- [✨ Core Features](#-core-features)
+  - [📖 Lesson Plan Management](#-lesson-plan-management)
+  - [🤖 AI Smart Assistant](#-ai-smart-assistant)
+  - [🌎 Frontend Experience](#-frontend-experience)
+- [🛠️ Tech Stack](#️-tech-stack)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+  - [DevOps & Tools](#devops--tools)
+- [🧠 Software Architecture](#-software-architecture)
+- [⚙️ Architecture Highlights](#️-architecture-highlights)
+- [📂 Project Structure](#-project-structure)
+- [📸 Screenshots](#-screenshots)
+- [⚙️ Installation](#️-installation)
+- [🔧 Backend Setup](#-backend-setup)
+- [🔐 Environment Variables](#-environment-variables)
+- [▶️ Running The Application](#️-running-the-application)
+- [🐳 Docker & Containerization](#-docker--containerization)
+- [📡 API Endpoints](#-api-endpoints)
+- [🧪 Example Request](#-example-request)
+- [🧠 Challenges Faced & Key Learnings](#-challenges-faced--key-learnings)
+- [🚀 Future Improvements](#-future-improvements)
+- [📚 Development Practices](#-development-practices)
+- [📈 GitHub Stats](#-github-stats)
+- [👨‍💻 Author](#-author)
+  </details>
+
+---
+
+# 🚀 Live Production Demo
 
 The project is fully online and available for testing! The application was deployed using a modern, decoupled architecture on **Render**:
 
 * **🔗 Application Link:** <a href="https://lessonflow-frontend.onrender.com/" target="_blank" rel="noopener noreferrer">https://lessonflow-frontend.onrender.com/</a>
 
-### 🏗️ Deployment Architecture
-* **Frontend:** Hosted as a *Static Site* for fast and optimized loading times.
-* **Backend:** Containerized with **Docker** into a *Web Service*, handling requests using Python/Flask.
-* **Database:** Isolated **PostgreSQL** instance for secure persistence of lesson plans.
-* **AI:** Real-time integration with the **Groq** API for smart content generation.
+
+</div>
 
 ---
 
-# 🚀 Overview
+# 🏗️ Deployment Architecture
 
-LessonFlow is a full-stack educational platform focused on lesson planning, pedagogical organization and AI-assisted teaching workflows.
+LessonFlow uses a fully decoupled production architecture deployed on Render.
 
-The platform allows teachers to:
-
-- create and manage lesson plans
-- organize educational content
-- search and filter lessons
-- receive AI-generated recommendations
-- improve teaching productivity
-
-This project was developed as a technical challenge with focus on professional backend architecture, REST APIs and AI integration.
+| Layer | Technology | Description |
+|---|---|---|
+| Frontend | Static Site | Optimized SPA-like frontend |
+| Backend | Flask + Docker | REST API and business logic |
+| Database | PostgreSQL | Persistent data storage |
+| AI Integration | Groq API | Smart educational recommendations |
 
 ---
 
-# ✨ Features
+# ✨ Core Features
 
-## 📖 Lesson Plan Management
+# 📖 Lesson Plan Management
 
 - Create lesson plans
 - Edit lesson plans
@@ -56,24 +89,27 @@ This project was developed as a technical challenge with focus on professional b
 
 ---
 
-## 🤖 AI Smart Assist
+# 🤖 AI Smart Assistant
 
 - AI-generated teaching recommendations
 - Suggested complementary content
 - Automatic educational tags
 - Suggested support resources
 - Structured JSON AI responses
+- Real-time recommendation generation
 
 ---
 
-## 🌎 Frontend Features
+# 🌎 Frontend Experience
 
 - Responsive interface
 - Dark / Light mode
 - English / Portuguese support
+- Dynamic DOM updates
+- SPA-like navigation
 - Real-time filtering
-- Dynamic suggestions
-- SPA-like navigation experience
+- Async API communication
+- Smooth animations without page reloads
 
 ---
 
@@ -85,8 +121,10 @@ This project was developed as a technical challenge with focus on professional b
 - Flask
 - SQLAlchemy
 - Marshmallow
-- PostgreSQL / SQLite
-- OpenAI-compatible API integration
+- PostgreSQL
+- SQLite
+- REST APIs
+- Groq API Integration
 
 ---
 
@@ -96,33 +134,38 @@ This project was developed as a technical challenge with focus on professional b
 - CSS3
 - Bootstrap 5
 - Vanilla JavaScript
+- Async/Await
+- Fetch API
 
 ---
 
-## DevOps
+## DevOps & Tools
 
 - Docker
+- Docker Compose
 - Git
 - GitHub
+- Render Deployment
 
 ---
 
 # 🧠 Software Architecture
 
-The backend follows a modular and scalable architecture pattern:
+The backend follows scalable and modular software engineering patterns.
 
 ```bash
 app/
 ├── ai/
+├── extensions/
 ├── models/
 ├── routes/
 ├── schemas/
-├── services/
-└── extensions/
-
+└── services/
 ```
 
-## Architecture Highlights
+---
+
+# ⚙️ Architecture Highlights
 
 - Application Factory Pattern
 - Blueprints
@@ -131,6 +174,8 @@ app/
 - Environment Variables
 - Separation of Concerns
 - RESTful conventions
+- Modular Architecture
+- AI Integration Layer
 
 ---
 
@@ -142,12 +187,11 @@ lessonflow/
 ├── backend/
 │   ├── app/
 │   │   ├── ai/
+│   │   ├── extensions/
 │   │   ├── models/
 │   │   ├── routes/
 │   │   ├── schemas/
-│   │   ├── services/
-│   │   └── extensions/
-│   │   
+│   │   └── services/
 │   │
 │   ├── requirements.txt
 │   ├── Dockerfile
@@ -156,15 +200,30 @@ lessonflow/
 ├── frontend/
 │
 ├── .env.example
+├── docker-compose.yml
 ├── README.md
 └── .gitignore
 ```
 
 ---
 
+# 📸 Screenshots
+
+# 🖥️ Dashboard
+
+<img width="1919" height="573" alt="dashboard" src="https://github.com/user-attachments/assets/73673e2f-4d0d-487f-81a1-b367c1e4bd50" />
+
+---
+
+# 🤖 AI Recommendation System
+
+<img width="1918" height="756" alt="ezgif com-animated-gif-maker (2)" src="https://github.com/user-attachments/assets/248f4052-fbde-426b-a272-ba144b9868f1" />
+
+---
+
 # ⚙️ Installation
 
-## Clone Repository
+# Clone Repository
 
 ```bash
 git clone https://github.com/rafael-smoura/lessonflow.git
@@ -215,7 +274,7 @@ Create a `.env` file inside `/backend`.
 Example:
 
 ```env
-GROQ_API_KEY=your_key_api
+GROQ_API_KEY=your_api_key
 ```
 
 ---
@@ -247,8 +306,10 @@ The application is fully containerized using Docker Compose, allowing you to orc
 
 ```bash
 docker-compose up --build
+```
 
 ---
+
 
 # 📡 API Endpoints
 
@@ -259,7 +320,7 @@ docker-compose up --build
 | POST | `/lesson-plans` | Create lesson plan |
 | PUT | `/lesson-plans/<id>` | Update lesson plan |
 | DELETE | `/lesson-plans/<id>` | Delete lesson plan |
-| POST | `/lesson-plans/ai-recommendations` | Generate AI suggestions |
+| POST | `/lesson-plans/ai-recommendations` | Generate AI recommendations |
 
 ---
 
@@ -282,21 +343,68 @@ docker-compose up --build
 
 ---
 
-# 📸 Screenshots
+# 🧠 Challenges Faced & Key Learnings
 
-## Dashboard
+Developing LessonFlow was a highly rewarding experience that pushed my technical boundaries, especially because this was only my second full-stack integration project.
 
-<img width="1919" height="573" alt="dashboard" src="https://github.com/user-attachments/assets/73673e2f-4d0d-487f-81a1-b367c1e4bd50" />
-
----
-
-## AI Recommendation System
-
-> Add AI assistant screenshot here
-<img width="1918" height="756" alt="ezgif com-animated-gif-maker (2)" src="https://github.com/user-attachments/assets/248f4052-fbde-426b-a272-ba144b9868f1" />
+As my background was significantly stronger in Backend Engineering, I had to rapidly improve my Frontend and JavaScript knowledge while simultaneously delivering a production-ready application.
 
 ---
 
+## 1. SPA Experience vs Traditional Flask Rendering
+
+Initially, every request triggered a complete browser page reload.
+
+This created the classic synchronous Flask behavior where animations, transitions and dynamic interactions were interrupted by full-page refreshes.
+
+### Solution
+
+I redesigned the frontend communication flow using:
+
+- `event.preventDefault()`
+- `fetch()`
+- `async/await`
+- Dynamic DOM manipulation
+
+This allowed the frontend to communicate asynchronously with the Flask backend while preserving a seamless SPA-like user experience.
+
+---
+
+## 2. Debugging JSON Data Flow
+
+During the integration with the Groq API, the frontend frequently rendered:
+
+```bash
+[object Object]
+```
+
+instead of the expected AI-generated text.
+
+### Solution
+
+I learned how JavaScript handles objects and JSON serialization in the browser and implemented:
+
+- Better response mapping
+- Structured JSON validation
+- Error handling with try/catch
+- Safer UI rendering logic
+
+---
+
+## 3. Backend Architecture Evolution
+
+To make the project scalable and production-ready, I studied and implemented:
+
+- Application Factory Pattern
+- Blueprints
+- Service Layer
+- Marshmallow Validation
+- Docker Containerization
+- RESTful API conventions
+
+This significantly improved maintainability and separation of concerns across the project.
+
+---
 
 # 🚀 Future Improvements
 
@@ -307,7 +415,9 @@ docker-compose up --build
 - CI/CD pipelines
 - AI prompt optimization
 - Analytics dashboard
-- Cloud deployment
+- WebSockets for live updates
+- Redis caching
+- Cloud-native deployment improvements
 
 ---
 
@@ -316,41 +426,31 @@ docker-compose up --build
 - Clean Code
 - RESTful API Design
 - Conventional Commits
-- Modular Architecture
 - Separation of Concerns
 - Environment Variable Protection
+- Modular Architecture
+- Scalable Backend Patterns
 
 ---
 
-# 🧠 Challenges Faced & Key Learnings
 
-Developing **LessonFlow** was a highly rewarding experience that pushed my technical boundaries, especially since this was only my **second time creating a full-stack integration** between a Frontend and a Backend application. 
+# 📈 Contribution Graph
 
-As my previous technical background was significantly stronger in **Backend development**, my knowledge of Frontend concepts and Vanilla JavaScript was very basic. This discrepancy forced me to find intelligent ways to accelerate my learning curve and meet the strict project deadlines, which is where utilizing Artificial Intelligence as a strategic co-pilot became essential.
+<div align="center">
 
-### 1. The SPA Experience vs. Flask's Native Synchronous Behavior
-Initially, whenever a user submitted a form or requested an AI generation, the browser followed its native HTTP behavior: it triggered a full-page reload (the traditional "F5 refresh effect"). Because the project demanded a fluid, seamless interface inspired by Notion, a standard multi-page reload was unacceptable.
-* **How AI helped me solve it:** I used AI to study DOM manipulation and asynchronous operations. With its assistance, I implemented `event.preventDefault()` to intercept form submissions and completely restructured the API communications using JavaScript's `fetch()` API combined with `async/await`. This allowed data to flow to and from the Flask server in the background, updating the UI dynamically without a single page refresh.
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=rafael-smoura&theme=react-dark&hide_border=true"/>
 
-### 2. Debugging the Data Flow: Overcoming the `[object Object]` Trap
-During the initial connections between the Frontend and the Groq AI service on the Backend, the application frequently outputted `[object Object]` inside the recommendation textareas instead of the actual text. 
-* **How AI helped me solve it:** Coming from a backend perspective, I had to quickly understand how JavaScript treats JSON objects in the browser's memory. With the help of AI, I learned how to debug the server response payload, ensuring I was correctly mapping the nested properties (e.g., `result.data.contents`) and using error-handling try-catch blocks to catch malformed structures before they reached the user interface.
-
-### 3. Rapid Upskilling Under Tight Deadlines
-To deliver a production-ready application within the challenge's timeline, I had to deeply study and apply complex architectural patterns simultaneously:
-* Implementing the **Application Factory Pattern** and **Blueprints** in Flask.
-* Enforcing strict validation schemas using **Marshmallow**.
-* Structuring strict JSON prompt formats for the **Groq API**.
-* Ensuring environment isolation using **Docker & Docker Compose**.
-
-Using AI during this project was never about blindly copying and pasting code. Instead, it served as an on-demand, private technical mentor that helped me translate complex architectural requirements into functional, clean code while drastically reducing the time spent debugging unfamiliar frontend syntax.
-
----
+</div>
 
 # 👨‍💻 Author
 
-Developed by Rafael Moura.
+<div align="center">
+
+## Rafael Moura
+
+Backend-focused Software Engineering student passionate about scalable systems, APIs and software architecture.
 
 GitHub:
 https://github.com/rafael-smoura
 
+</div>
