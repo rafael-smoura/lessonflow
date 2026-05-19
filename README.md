@@ -1,4 +1,4 @@
-# 📚 LessonFlow
+# LessonFlow
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Flask](https://img.shields.io/badge/Flask-Backend-black)
