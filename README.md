@@ -288,15 +288,14 @@ docker-compose up --build
 
 ## Dashboard
 
-<img width="1916" height="445" alt="ezgif com-animated-gif-maker" src="https://github.com/user-attachments/assets/25fae0ad-86b8-45af-b50e-8c50cfcc23c7" />
+<img width="1919" height="573" alt="dashboard" src="https://github.com/user-attachments/assets/73673e2f-4d0d-487f-81a1-b367c1e4bd50" />
 
 ---
 
 ## AI Recommendation System
 
 > Add AI assistant screenshot here
-<img width="1905" height="900" alt="Ai_recommendation" src="https://github.com/user-attachments/assets/0a8ea7d4-d47e-49be-ad5b-0f570e34c0fe" />
-
+<img width="1918" height="756" alt="ezgif com-animated-gif-maker (2)" src="https://github.com/user-attachments/assets/248f4052-fbde-426b-a272-ba144b9868f1" />
 
 ---
 
