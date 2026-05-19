@@ -295,7 +295,8 @@ docker-compose up --build
 ## AI Recommendation System
 
 > Add AI assistant screenshot here
-<img width="1906" height="910" alt="image" src="https://github.com/user-attachments/assets/06e9d2cf-6892-440c-87dd-c190035c9044" />
+<img width="1905" height="900" alt="Ai_recommendation" src="https://github.com/user-attachments/assets/0a8ea7d4-d47e-49be-ad5b-0f570e34c0fe" />
+
 
 ---
 
