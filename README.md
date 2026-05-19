@@ -325,6 +325,31 @@ docker-compose up --build
 
 ---
 
+# 🧠 Challenges Faced & Key Learnings
+
+Developing **LessonFlow** was a highly rewarding experience that pushed my technical boundaries, especially since this was only my **second time creating a full-stack integration** between a Frontend and a Backend application. 
+
+As my previous technical background was significantly stronger in **Backend development**, my knowledge of Frontend concepts and Vanilla JavaScript was very basic. This discrepancy forced me to find intelligent ways to accelerate my learning curve and meet the strict project deadlines, which is where utilizing Artificial Intelligence as a strategic co-pilot became essential.
+
+### 1. The SPA Experience vs. Flask's Native Synchronous Behavior
+Initially, whenever a user submitted a form or requested an AI generation, the browser followed its native HTTP behavior: it triggered a full-page reload (the traditional "F5 refresh effect"). Because the project demanded a fluid, seamless interface inspired by Notion, a standard multi-page reload was unacceptable.
+* **How AI helped me solve it:** I used AI to study DOM manipulation and asynchronous operations. With its assistance, I implemented `event.preventDefault()` to intercept form submissions and completely restructured the API communications using JavaScript's `fetch()` API combined with `async/await`. This allowed data to flow to and from the Flask server in the background, updating the UI dynamically without a single page refresh.
+
+### 2. Debugging the Data Flow: Overcoming the `[object Object]` Trap
+During the initial connections between the Frontend and the Groq AI service on the Backend, the application frequently outputted `[object Object]` inside the recommendation textareas instead of the actual text. 
+* **How AI helped me solve it:** Coming from a backend perspective, I had to quickly understand how JavaScript treats JSON objects in the browser's memory. With the help of AI, I learned how to debug the server response payload, ensuring I was correctly mapping the nested properties (e.g., `result.data.contents`) and using error-handling try-catch blocks to catch malformed structures before they reached the user interface.
+
+### 3. Rapid Upskilling Under Tight Deadlines
+To deliver a production-ready application within the challenge's timeline, I had to deeply study and apply complex architectural patterns simultaneously:
+* Implementing the **Application Factory Pattern** and **Blueprints** in Flask.
+* Enforcing strict validation schemas using **Marshmallow**.
+* Structuring strict JSON prompt formats for the **Groq API**.
+* Ensuring environment isolation using **Docker & Docker Compose**.
+
+Using AI during this project was never about blindly copying and pasting code. Instead, it served as an on-demand, private technical mentor that helped me translate complex architectural requirements into functional, clean code while drastically reducing the time spent debugging unfamiliar frontend syntax.
+
+---
+
 # 👨‍💻 Author
 
 Developed by Rafael Moura.
