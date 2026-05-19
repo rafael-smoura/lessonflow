@@ -238,17 +238,15 @@ http://127.0.0.1:17001
 
 # 🐳 Docker & Containerization
 
-A aplicação possui suporte a containerização completa utilizando Docker Compose, permitindo subir o ecossistema (Backend + Frontend) com um único comando.
+The application is fully containerized using Docker Compose, allowing you to orchestrate and spin up the entire ecosystem (Backend + Frontend) with a single command.
 
-## Como Rodar com Docker Compose (Recomendado)
+## Running with Docker Compose (Recommended)
 
-1. Certifique-se de que possui um arquivo `.env` configurado na raiz do projeto contendo sua `GROQ_API_KEY`.
-2. Na raiz do projeto, execute o comando:
+1. Ensure you have a `.env` file configured in the root directory of the project containing your `GROQ_API_KEY`.
+2. Run the following command from the project root:
 
 ```bash
 docker-compose up --build
-
-```
 
 ---
 
