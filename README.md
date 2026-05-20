@@ -187,22 +187,43 @@ lessonflow/
 ├── backend/
 │   ├── app/
 │   │   ├── ai/
+│   │   │   └── lesson_plan_ai.py
+│   │   ├── config/
+│   │   │   └── config.py
 │   │   ├── extensions/
+│   │   │   └── extensions.py
 │   │   ├── models/
+│   │   │   ├── lesson_plan.py
+│   │   │   └── user.py
 │   │   ├── routes/
+│   │   │   ├── auth_routes.py
+│   │   │   └── lesson_plan_routes.py
 │   │   ├── schemas/
-│   │   └── services/
+│   │   │   └── lesson_plan_schema.py
+│   │   ├── services/
+│   │   │   └── lesson_plan_service.py
+│   │   └── __init__.py
 │   │
-│   ├── requirements.txt
+│   ├── .dockerignore
+│   ├── .env
 │   ├── Dockerfile
+│   ├── requirements.txt
 │   └── run.py
 │
 ├── frontend/
+│   ├── css/
+│   │   └── styles.css
+│   ├── img/
+│   │   └── favicon.png
+│   ├── js/
+│   │   └── app.js
+│   ├── Dockerfile
+│   └── index.html
 │
-├── .env.example
+├── .gitignore
 ├── docker-compose.yml
-├── README.md
-└── .gitignore
+├── LICENSE
+└── README.md
 ```
 
 ---
