@@ -345,6 +345,8 @@ docker-compose up --build
 
 # 🧠 Challenges Faced & Key Learnings
 
+video here: https://drive.google.com/file/d/1mCnK795UxGB0qv_2YZLPotZ4qpwzq3dB/view?usp=drivesdk
+
 Developing LessonFlow was a highly rewarding experience that pushed my technical boundaries, especially because this was only my second full-stack integration project.
 
 As my background was significantly stronger in Backend Engineering, I had to rapidly improve my Frontend and JavaScript knowledge while simultaneously delivering a production-ready application.
