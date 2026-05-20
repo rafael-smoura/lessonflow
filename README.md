@@ -41,7 +41,7 @@ AI-powered lesson plan management platform built with Flask, Bootstrap and Postg
 - [🐳 Docker & Containerization](#-docker--containerization)
 - [📡 API Endpoints](#-api-endpoints)
 - [🧪 Example Request](#-example-request)
-- [🧠 Challenges Faced & Key Learnings](#-challenges-faced--key-learnings)
+- [🧠 Challenges Faced & Key Learnings, (video_here)](#-challenges-faced--key-learnings)
 - [🚀 Future Improvements](#-future-improvements)
 - [📚 Development Practices](#-development-practices)
 - [📈 GitHub Stats](#-github-stats)
