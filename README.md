@@ -353,22 +353,19 @@ As my background was significantly stronger in Backend Engineering, I had to rap
 
 ---
 
-## 1. SPA Experience vs Traditional Flask Rendering
+## 1. SPA Experience, Styling & AI Co-piloting
 
-Initially, every request triggered a complete browser page reload.
+Initially, every request triggered a complete browser page reload, interrupting animations and dynamic interactions. 
 
-This created the classic synchronous Flask behavior where animations, transitions and dynamic interactions were interrupted by full-page refreshes.
+As my background was significantly stronger in Backend Engineering, my Frontend skills (JavaScript and CSS) were basic at the time. To bridge this gap, build a polished UI, and deliver a production-ready SPA experience efficiently, **I utilized AI assistance as a coding co-pilot and learning accelerator for both JavaScript logic and CSS styling**.
 
-### Solution
+### Solution & Learning Process
+With the help of AI to guide my learning, troubleshoot syntax, and assist with responsive layouts, I designed and implemented the frontend using:
+- `event.preventDefault()`, `fetch()`, and `async/await` for asynchronous communication.
+- Dynamic DOM manipulation to avoid page reloads.
+- Modern CSS and Bootstrap overrides to ensure a clean, responsive, and visually cohesive layout.
 
-I redesigned the frontend communication flow using:
-
-- `event.preventDefault()`
-- `fetch()`
-- `async/await`
-- Dynamic DOM manipulation
-
-This allowed the frontend to communicate asynchronously with the Flask backend while preserving a seamless SPA-like user experience.
+This approach not only allowed the frontend to communicate seamlessly with the Flask backend but also served as an intensive, hands-on masterclass in modern UI development for me.
 
 ---
 
